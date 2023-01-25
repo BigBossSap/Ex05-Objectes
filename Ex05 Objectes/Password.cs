@@ -14,18 +14,19 @@ namespace Ex05_Objectes
 
         public Password()
         {
-
+            this.longitud = 8;
         }
 
         public Password(int longitud)
         {
-            this.Longitud = longitud;
+            this.longitud = longitud;
+            this.contraseña = generarPassword(longitud);
         }
 
         public string Contraseña { get => contraseña; set => contraseña = value; }
         public int Longitud { get => longitud; set => longitud = value; }
 
-        public string generarPassword()
+        public string generarPassword(int longitud)
         {
             string password="";
 
@@ -60,7 +61,7 @@ namespace Ex05_Objectes
             
         }
 
-        public bool esFuerte()
+        public bool esFuerte( string contraseña)
         {
             int mayusculas = 0;
             int minusculas = 0;
